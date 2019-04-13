@@ -1,18 +1,24 @@
-<input type="submit" action='Autorization.php' name="index_goToLogin" value="Войти" />
-<div id="index_allNewsDiv">
-<?php
-	foreach ($variable as $key => $value) {
-		# code...
-	}
-?>
-<!-->foreach form database
-	<div name="news_id">
+<!doctype>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="submit" action='Autorization.php' name="index_goToLogin" value="Войти" />
+		</form>
+		<div id="index_allNewsDiv">
+			<?php
+			$news_array=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+			foreach ($news_array as $news):
+			?>
 				<div>
-					<a href="SingleNews.php">Название новости</a>
+					<a href='<?=$link?>'><?=$news['head']?></a><!--TODO $link=ссылка на singleNews-->
 				</div>
 				<div>
-					<p>Some text not more 100 symbols</p>
+					<p><?=$news['text']?></p>
 				</div>
-	</div>
-	<-->
-</div>
+			<?php endforeach; ?>
+		</div>
+	</body>
+</html>

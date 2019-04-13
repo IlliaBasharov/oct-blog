@@ -12,7 +12,6 @@
             <td colspan="2" style="text-align: center"><input type="submit" value="Войти"></td>
 			<td colspan="2" style="text-align: center"><input type="button" value="Зарегистрироваться"></td>
         </tr>
-		fsddsgdfsh
-		123
+		
     </table>
 </form>

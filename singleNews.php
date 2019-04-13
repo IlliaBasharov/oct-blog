@@ -1,3 +1,3 @@
 <?php
-use Views\singleNews;
+use Views\SingleNews;
 

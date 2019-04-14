@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<form>
-			<input type="submit" action='Autorization.php' name="index_goToLogin" value="Войти" />
+			<input type="submit" action='Autorization.php' name="index_goToLogin" value="enter" />
 		</form>
 		<div id="index_allNewsDiv">
 			<?php
@@ -14,7 +14,7 @@
 			foreach ($news_array as $news):
 			?>
 				<div>
-					<a href='<?=$link?>'><?=$news['head']?></a><!--TODO $link=singleNews-->
+					<a href='<?=$link?>'><?=$news['head']?></a>
 				</div>
 				<div>
 					<p><?=$news['text']?></p>

@@ -1,5 +1,5 @@
 <?php
-
+include_once './config.php';
 class DataBase {
-    //put your code here
+    echo DB_HOST;
 }

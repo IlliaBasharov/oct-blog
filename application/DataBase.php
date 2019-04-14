@@ -1,5 +1,10 @@
 <?php
-include_once './config.php';
+
 class DataBase {
-    echo DB_HOST;
+
+    public function __construct() {
+        include_once 'config.php';
+        echo DB_HOST;
+    }
+
 }

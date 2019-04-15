@@ -1,16 +1,17 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of User
- *
- * @author web
- */
 class User {
-    //put your code here
+
+    public $login;
+    public $password;
+    public $email;
+
+    public function __construct($login, $password, $email) {
+        $this->login = $login;
+        $this->password = $password;
+        $this->email = $email;
+    }
+
+   
+
 }

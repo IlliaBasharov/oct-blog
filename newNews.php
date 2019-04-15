@@ -1,5 +1,8 @@
 <?php
 
+include_once '..' . DIRECTORY_SEPARATOR . 'config_example.php';
+include_once 'application' . DIRECTORY_SEPARATOR . 'DataBase.php';
+
 class newNews {
 
     public $title;
@@ -7,6 +10,8 @@ class newNews {
     public $date_time;
     public $date_change;
     public $image_path;
+    public $user_id;
+    public $error_message;
 
     public function __construct() {
         $this->title = filter_input(INPUT_POST, 'title');
@@ -28,11 +33,17 @@ class newNews {
     }
 
     public function fileValidator() {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $this->error_message = $_SESSION["file_error_message"];
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $documents = $_FILES['document'];
             if (empty($documents)) {
                 echo 'Отсутствует изображение для загрузки.';
                 exit();
+            } else if (count($_FILES['document']['name']) > 1) {
+                $message = 'Выберите 1 фотографию';
             } else {
                 foreach ($documents['error'] as $i => $error) {
                     if ($error !== 0) {
@@ -43,20 +54,31 @@ class newNews {
 
                         $message = 'Размер файла слишком большой!';
                     } else {
-                        $file_name = $documents['name'][$i];
+                        $components = explode('.', $documents['name'][$i]);
+                        $file_name = md5($components[0]) . rand(1, 1000) . '.' . $components[1];
+
+
                         if (!file_exists(UPLOAD_DOC_DIR)) {
                             mkdir(UPLOAD_DOC_DIR, 0777, true);
                         }
+                        define('ROOT', dirname(__FILE__));
+                        $this->image_path = ROOT . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . $file_name;
                         $file_path = UPLOAD_DOC_DIR . DIRECTORY_SEPARATOR . $file_name;
                         if (!move_uploaded_file($documents['tmp_name'][$i], $file_path)) {
                             $message = 'перемещение загруженного файла не удалось!';
-                        } else {
-                            $message = 'загрузка произведена успешно!';
                         }
                     }
                 }
             }
-            return $message;
+            unset($_SESSION["file_error_message"]);
+            $_SESSION["file_error_message"] = $message;
+            if (empty($_SESSION['file_error_message'])) {
+                $db = new DataBase();
+                $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, 3); //TODO USER_ID где взять?
+                header('Location: http://oct-blog/Views/Autorization.php');  //TODO СМЕНИТЬ РЕДИРЕКТ ПОСЛЕ ДОБАВЛЕНИЯ НОВОСТИ!!!
+            } else {
+                header('Location: http://oct-blog/Views/NewNews.php');
+            }
         }
     }
 
@@ -89,11 +111,6 @@ class newNews {
                 break;
         }
         return $message;
-    }
-
-    private function imageHash($image) {
-        $image = hash("md5", $image);
-        return $image;
     }
 
 }

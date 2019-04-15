@@ -16,7 +16,7 @@ $newNews->fileValidator();
             <div id="main">
                 <form method="POST" enctype="multipart/form-data">
                     <h2>Создать новость</h2>
-                    <input type="text" name="title" placeholder="заголовок" required/>
+                    <input type="text" name="title" maxlength="255" placeholder="заголовок" required/>
                     <input type="text" name="content" placeholder="текст" required/>
                     <input type="datetime-local" name="date" placeholder="дата создания"/>
                     <input type="file" multiple name="document[]"/>

@@ -72,10 +72,11 @@ class newNews {
             }
             unset($_SESSION["file_error_message"]);
             $_SESSION["file_error_message"] = $message;
-            if (empty($_SESSION['file_error_message'])) {
-                $db = new DataBase();
+            if (empty($_SESSION['file_error_message']) && $this->validator($this->title, $this->text) ) {
+                $db = new DataBase();                                                                                //начинаем тащить в базу
                 $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, 3); //TODO USER_ID где взять?
-                header('Location: http://oct-blog/Views/Autorization.php');  //TODO СМЕНИТЬ РЕДИРЕКТ ПОСЛЕ ДОБАВЛЕНИЯ НОВОСТИ!!!
+                //==================================================================================================================================
+                header('Location: http://oct-blog/Views/AllNews.php');
             } else {
                 header('Location: http://oct-blog/Views/NewNews.php');
             }

@@ -32,10 +32,10 @@ class DataBase {
         $news = $result->fetch_all(MYSQLI_ASSOC);
         return $news;
     }
-
-    public function getNewsById($id) {
+    
+    public function getNewsById($id){
         $this->connect();
-        $sql = "SELECT artickles.*, users.login FROM artickles INNER JOIN users ON artickles.user_id = users.id WHERE artickles.id = " . $id . ";";
+        $sql = "SELECT artickles.*, users.login FROM artickles INNER JOIN users ON artickles.user_id = users.id WHERE artickles.id = ".$id.";";
         if (!$result = $this->mysqli->query($sql)) {
             // О нет! запрос не удался. 
             echo "Извините, возникла проблема в работе сайта.";
@@ -80,7 +80,7 @@ class DataBase {
 
     public function setUser($login, $pass, $email) {
         $this->connect();
-        $sql = "insert into users values (null,'" . $login . "','" . $pass . "','" . $email . "');";
+        $sql = "insert into users values (null,'".$login."','".$pass."','".$email."');";
         if (!$result = $this->mysqli->query($sql)) {
             // О нет! запрос не удался. 
             echo "Извините, возникла проблема в работе сайта.";
@@ -89,11 +89,12 @@ class DataBase {
             echo "Ошибка: " . $this->mysqli->error . "\n";
             exit;
         }
+        
     }
-
-    public function getNewsByLogin($login) {
+    
+    public function getNewsByLogin($login){
         $this->connect();
-        $sql = "SELECT artickles.id, artickles.name, artickles.text FROM artickles INNER JOIN users ON artickles.user_id = users.id WHERE users.login = '" . $login . "';";
+        $sql = "SELECT artickles.id, artickles.name, artickles.text FROM artickles INNER JOIN users ON artickles.user_id = users.id WHERE users.login = '".$login."';";
         if (!$result = $this->mysqli->query($sql)) {
             // О нет! запрос не удался. 
             echo "Извините, возникла проблема в работе сайта.";
@@ -106,11 +107,11 @@ class DataBase {
         var_dump($news);
         return $news;
     }
-
-    public function deletNews($id) {
+    
+    public function deletNews($id){
         //"DELETE FROM `artickles` WHERE `artickles`.`id` = 3"
         $this->connect();
-        $sql = "DELETE FROM `artickles` WHERE `artickles`.`id` = " . $id . ";";
+        $sql = "DELETE FROM `artickles` WHERE `artickles`.`id` = ".$id.";";
         if (!$result = $this->mysqli->query($sql)) {
             // О нет! запрос не удался. 
             echo "Извините, возникла проблема в работе сайта.";

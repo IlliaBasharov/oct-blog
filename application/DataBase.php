@@ -1,6 +1,6 @@
 <?php
 
-include_once 'config.php';
+include_once '..' . DIRECTORY_SEPARATOR . 'config_example.php';
 
 class DataBase {
 

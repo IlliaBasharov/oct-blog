@@ -15,3 +15,16 @@
 
 <?php
 
+$login = filter_input(INPUT_POST, 'login');
+$pass = filter_input(INPUT_POST, 'password');
+
+
+include_once 'Application/DataBase.php';
+
+$db = new DataBase();
+$user = $db->getUser($login);
+if(password_verify($pass, $user['pass'])){
+    
+} else {
+    echo 'Invalid password!';
+}

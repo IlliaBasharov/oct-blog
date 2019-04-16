@@ -25,7 +25,7 @@ if (!$user = $db->getUser($login)) {
     echo 'Invalid Login!';
 } else {
     if (password_verify($pass, $user['pass'])) {
-        include_once 'index.php';
+        header("Location: index.php");
     } else {
         echo 'Invalid password!';
     }

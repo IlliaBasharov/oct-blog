@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<form>
-			<input type="submit" action='Autorization.php' name="index_goToLogin" value="enter" />
+			<input type="submit" formaction='http://oct-blog/autorization.php' value="enter" />
 		</form>
 		<div id="index_allNewsDiv">
 			<?php

@@ -47,5 +47,5 @@ if (!empty($_POST['register'])) {
 
 if ($massages === true) {
     $database->setUser($user_data['login'], $user_data['password'], $user_data['email']);
-    header('Location: http://oct-blog/index.php');
+    header('Location: http://oct-blog/autorization.php');
 }

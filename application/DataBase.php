@@ -74,7 +74,7 @@ class DataBase {
             exit;
         }
         $massive = $result->fetch_assoc();
-        $user = new User($massive['id'], $massive['login'], $massive['pass'], $massive['email']);
+        $user = new User($massive['login'], $massive['pass'], $massive['email']);
         return $user;
     }
 

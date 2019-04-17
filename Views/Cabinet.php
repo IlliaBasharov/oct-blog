@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
     </head>
     <body>
+        <?php?>
         <button type="button" name="cabinet_showNews" value="<?php $loginUser; ?>"></button>
         <div id="cabinet_allNews" style="visibility: hidden">
             <form action="newNews.php">

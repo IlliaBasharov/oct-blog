@@ -6,7 +6,7 @@
     </head>
     <body>
         <button type="button" name="cabinet_showNews" value="<?php $loginUser; ?>"></button>
-        <div id="cabinet_allNews">
+        <div id="cabinet_allNews" style="visibility: hidden">
             <form action="newNews.php">
                 <?php
                 foreach ($news as $value) {

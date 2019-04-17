@@ -10,7 +10,7 @@
             <form action="newNews.php">
                 <?php
                 foreach ($news_array as $news) {
-                    return $news;
+                    echo $news;
                 }
                 ?>
                 <input type="button" name="cabinet_newNews"/>

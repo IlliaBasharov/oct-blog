@@ -1,6 +1,5 @@
 <?php
 include_once 'includes/Autoload.php';
-
 if (isset($_GET['newsId'])) {
     if (!empty($_GET["newsId"])) {
         $db = new DataBase();

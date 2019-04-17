@@ -105,7 +105,6 @@ class DataBase {
             exit;
         }
         $news = $result->fetch_all(MYSQLI_ASSOC);
-        var_dump($news);
         return $news;
     }
     

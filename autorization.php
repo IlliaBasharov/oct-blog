@@ -18,7 +18,8 @@ $login = filter_input(INPUT_POST, 'login');
 $pass = filter_input(INPUT_POST, 'password');
 
 
-include_once 'Application/DataBase.php';
+include_once 'Application'.DIRECTORY_SEPARATOR.'DataBase.php';
+include_once 'config_example.php';
 
 $db = new DataBase();
 if (!$user = $db->getUser($login)) {

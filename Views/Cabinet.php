@@ -24,7 +24,7 @@
                     <input type="hidden" name="deleteNewsId" value="<?php $nameNewsId; ?>"/>
                 </a>
                 <div>
-                    <?php $newsTextId; ?>
+                    <p><?= $news['text'] ?></p>
                 </div>
             </form>
             <form action="newNews.php">

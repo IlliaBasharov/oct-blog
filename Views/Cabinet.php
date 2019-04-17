@@ -9,8 +9,8 @@
         <div id="cabinet_allNews" style="visibility: hidden">
             <form action="newNews.php">
                 <?php
-                foreach ($news as $value) {
-                    echo $value;
+                foreach ($news_array as $news) {
+                    return $news;
                 }
                 ?>
                 <input type="button" name="cabinet_newNews"/>
@@ -24,19 +24,14 @@
                     <input type="hidden" name="deleteNewsId" value="<?php $nameNewsId; ?>"/>
                 </a>
                 <div>
-                    <?php $textNewsId; ?>
+                    <?php $newsTextId; ?>
                 </div>
-
             </form>
-
             <form action="newNews.php">
                 <input type="button" name="cabinet_newNews"/>
             </form>
-
-
         </div>
         <input type="submit" name="cabinet_logOut" value="Выход"/>
-        
     </body>
 </html>
 

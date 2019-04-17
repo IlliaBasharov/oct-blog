@@ -5,7 +5,7 @@
         <title></title>
     </head>
     <body>
-        <?php var_dump($easfaf)?>
+        <?php?>
         <button type="button" name="cabinet_showNews" value="<?php $loginUser; ?>"></button>
         <div id="cabinet_allNews" style="visibility: hidden">
             <form action="newNews.php">

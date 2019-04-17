@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
 	if (!$user = $db->getUser($login)) {
 		echo 'Invalid Login!';
 	} else {
-		if (password_verify($pass, $user['pass'])) {
+		if (password_verify($pass, $user->pass)) {
 			$_SESSION['loginUser'] = $login;
 			header("Location: index.php");
 		} else {

@@ -10,3 +10,4 @@
             <input type="button" value="Зарегистрироваться" onclick="location.href=' http://oct-blog/registration.php'">
         
 </form>
+  

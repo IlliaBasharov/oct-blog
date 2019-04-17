@@ -1,4 +1,4 @@
-<form method="post" action="/login/">
+<form method="post" >
     
             <label for="loginField">Логин</label>
             <input id="loginField" type="text" name="login" required>

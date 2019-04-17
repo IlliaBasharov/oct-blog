@@ -26,7 +26,7 @@ if (!$user = $db->getUser($login)) {
     echo 'Invalid Login!';
 } else {
     if (password_verify($pass, $user['pass'])) {
-		$_SESSION['login'] = $login;
+		$_SESSION['loginUser'] = $login;
         header("Location: index.php");
     } else {
         echo 'Invalid password!';

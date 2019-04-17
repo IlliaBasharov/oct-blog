@@ -1,2 +1,2 @@
 <?php
-include_once 'includes'.DIRECTORY_SEPARATOR.'allNews.php';
+include_once 'Views'.DIRECTORY_SEPARATOR.'allNews.php';

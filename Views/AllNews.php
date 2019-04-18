@@ -23,5 +23,6 @@
                     <a href='<?=$link.$news['id']?>'><div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal w3-hover-light-grey" id="newsText"><h3><?=$news['name']?></h3><p><?=$news['text']?></p></div></a>
 			<?php endforeach; ?>
 		</div>
+             <?php include_once 'Views'.DIRECTORY_SEPARATOR.'Footer.php'; ?> 
 	</body>
 </html>

@@ -41,5 +41,6 @@
         <form method="POST" >
             <input type="submit" name="cabinet_logOut" value="Выход" id="output"/>
         </form>
+         <?php include_once 'Views/Footer.php'; ?> 
     </body>
 </html>

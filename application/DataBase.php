@@ -121,5 +121,18 @@ class DataBase {
             exit;
         }
     }
+    public function getUserId($login) {
+        $this->connect();
+        $sql = "select id from users where login = '" . $login . "';";
+        if (!$result = $this->mysqli->query($sql)) {
+            // О нет! запрос не удался. 
+            echo "Извините, возникла проблема в работе сайта.";
+            echo "Запрос: " . $sql . "\n";
+            echo "Номер ошибки: " . $this->mysqli->errno . "\n";
+            echo "Ошибка: " . $this->mysqli->error . "\n";
+            exit;
+        }
+        return $result;
+    }
 
 }

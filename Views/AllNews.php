@@ -14,7 +14,7 @@
 		<div id="index_allNewsDiv">
 			<?php
                         $db = new DataBase();
-                        $news_array = $db->getNews();
+                        $news_array = array_reverse($db->getNews());
                         //=====================старая версия
 			//$news_array=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
                         $link='singleNews.php?newsId=';

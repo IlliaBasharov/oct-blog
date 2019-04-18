@@ -21,7 +21,7 @@
             $news_array = $db->getNewsByLogin($loginUser);
             foreach ($news_array as $news):
                 ?>
-                <a href='<?= $link ?>.$link = "Views" . DIRECTORY_SEPARATOR . "SingleNews.php".$link.getNewsId = <?= $news[id] ?>;'>
+                <a href='<?= $link; ?>.$link = "Views" . DIRECTORY_SEPARATOR . "SingleNews.php".$link.getNewsId = <?= $news[id]; ?>'>
             <button type="button" name="delete_news" id="del">
                 <img src="Views/images/Del.jpg" alt="delete" class="del"/>
                 <input type="hidden" name="deleteNewsId" value="<?= $news[id] ?>"/>

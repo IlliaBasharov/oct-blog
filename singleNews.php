@@ -20,6 +20,6 @@ if (isset($_GET['newsId'])) {
         . 'Извините, возникла проблема в работе сайта.</br>'.
         '<input type="submit" value="К новостям" /> </form>';     
     }  
-     echo $view;
+    include_once 'Views/SingleNews.php';
 }
 

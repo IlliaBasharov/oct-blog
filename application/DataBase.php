@@ -65,7 +65,7 @@ class DataBase {
 
     public function getUser($login) {
         $this->connect();
-        $sql = "select * from users where login = '" . $login . "';";
+        $sql = "select id, login, pass, email from users where login = '" . $login . "';";
         if (!$result = $this->mysqli->query($sql)) {
             // О нет! запрос не удался. 
             echo "Извините, возникла проблема в работе сайта.";

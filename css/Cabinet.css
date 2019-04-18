@@ -1,3 +1,6 @@
+body{
+    background-image: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
+}
 #log{
     margin: 10px auto 0 200px;
     background-color: aqua;

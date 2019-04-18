@@ -8,7 +8,9 @@
     </head>
     <body>
         <form id="allNewsUser">
-            <button type="button" name="cabinet_showNews" id="log"><?php echo $loginUser; ?></button>
+            <button type="button" name="cabinet_showNews" id="log">
+                <?php echo $loginUser; ?>
+            </button>
             <div id="cabinet_allNews">
                 <p>
                     <a href="Views/newNews.php">
@@ -23,7 +25,10 @@
                     $link = 'Views' . DIRECTORY_SEPARATOR . 'SingleNews.php';
                     foreach ($news_array as $news):
                         ?>
-                        <a href='<?= $link ?>'><h3><?= $news['name'] ?></h3><p><?= $news['text'] ?></p></a>
+                        <a href='<?= $link ?>'>
+                            <h3><?= $news['name'] ?></h3>
+                            <p><?= $news['text'] ?></p>
+                        </a>
                     <?php endforeach; ?>
                 </form>
                 <p>
@@ -44,7 +49,9 @@
             <title></title>
         </head>
         <body>
-            <button type="button" name="cabinet_showNews"><?= $loginUser ?></button>
+            <button type="button" name="cabinet_showNews">
+                <?= $loginUser ?>
+            </button>
             <div id = cabinet_allNews>
                 <?php
                 foreach ($news as $news_one) {

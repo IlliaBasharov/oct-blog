@@ -6,13 +6,19 @@ window.onload = function () {
     }
 };
 window.onload = function () {
-    var text = document.getElementById("cabinet_AllNewsDiv");
-    var sliced = text.slice(0, 100);
-    if (sliced.length < text.length) {
-        var lastSpace = sliced.last(" ");
-        if (lastSpace < sliced.length) {
-            sliced = sliced.substr(0, lastSpace);
+    var textBlocks = document.querySelectorAll('p');
+    for (var i = 0; i < textBlocks.length; i++) {
+        var text = textBlocks[i].innerHTML;
+        textBlocks[i].innerHTML = '';
+        for (var j = 101; j > 0; j--) {
+            if (text[j] !== " ") {
+                continue;
+            }else{
+                var str = j;
+                break;
+            }
         }
-        return sliced += '...';
-    };
+        var sliced = text.slice(0, str);
+        textBlocks[i].innerHTML = sliced;
+    }
 };

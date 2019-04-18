@@ -1,6 +1,6 @@
 <?php
 
-include_once '..' . DIRECTORY_SEPARATOR . 'config_example.php';
+include_once '..' . DIRECTORY_SEPARATOR . 'config.php';
 include_once 'application' . DIRECTORY_SEPARATOR . 'DataBase.php';
 
 class newNews {
@@ -17,9 +17,8 @@ class newNews {
         $this->title = filter_input(INPUT_POST, 'title');
         $this->text = filter_input(INPUT_POST, 'content');
         $this->date_time = filter_input(INPUT_POST, 'date');
-        $date_components = explode('T', $this->date_time);
         $today = date('H:m:s');
-        $this->date_time = $date_components[0] . ' ' . $today;
+        $this->date_time = $this->date_time . ' ' . $today;
         $this->date_change = $this->date_time;
     }
 
@@ -73,12 +72,20 @@ class newNews {
             unset($_SESSION["file_error_message"]);
             $_SESSION["file_error_message"] = $message;
             if (empty($_SESSION['file_error_message']) && $this->validator($this->title, $this->text) ) {
-                $db = new DataBase();                                                                                //начинаем тащить в базу
-                $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, 3); //TODO USER_ID где взять?
-                //==================================================================================================================================
+                $login = $_SESSION['loginUser'];
+                $db = new DataBase();
+                $ids = $db->getUserId($login);
+                foreach($ids as $value){
+                    $id = $value['id'];
+                    break;
+                }
+                $id = $id*1;
+                $this->user_id = $id;
+                $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, $this->user_id);
+
                 header('Location: http://oct-blog/Views/AllNews.php');
             } else {
-                header('Location: http://oct-blog/Views/NewNews.php');
+                header('Location: http://oct-blog/index.php');
             }
         }
     }

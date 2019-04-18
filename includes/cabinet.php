@@ -1,16 +1,17 @@
 <?php
 
-$db = new DataBase(); 
+$db = new DataBase();
 
 $method = $_SERVER['REQUEST_METHOD'];
 if ($method === 'POST') {
-    $deleteNewsId  = POST["deleteNewsId"];
-    if(!empty($deleteNewsId)){
+    $deleteNewsId = $_POST['deleteNewsId'];
+    if (!empty($deleteNewsId)) {
         $db = new DataBase();
         $db->deletNews($deleteNewsId);
-    } else {
-        $user=new User();
+    } else if(!empty($_POST['cabinet_logOut'])){
+        $user = new User();
         $user->logout();
+        header('Location: http://oct-blog/index.php');
     }
 } else if ($method === 'GET') {
     $news = $db->getNewsByLogin($loginUser);

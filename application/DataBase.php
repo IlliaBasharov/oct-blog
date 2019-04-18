@@ -21,7 +21,7 @@ class DataBase {
 
     public function getNews() {
         $this->connect();
-        $sql = "SELECT artickles.id, artickles.name, artickles.text, artickles.dateOfChange FROM artickles";
+        $sql = "SELECT artickles.id, artickles.name, artickles.text, artickles.dateOfChange FROM artickles;";
         if (!$result = $this->mysqli->query($sql)) {
             // О нет! запрос не удался. 
             echo "Извините, возникла проблема в работе сайта.";

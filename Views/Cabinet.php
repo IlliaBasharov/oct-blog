@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link href="../css/Cabinet.css" rel="stylesheet" type="text/css"/>
+	<script src="../js/main.js" type="text/javascript"></script>
         <title></title>
     </head>
     <body>

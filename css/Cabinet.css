@@ -1,0 +1,17 @@
+#log{
+    margin: 10px auto 0 200px;
+    background-color: aqua;
+}
+#cabinet_allNews{
+    margin: 20px auto 0 50px;
+/*    visibility: hidden;*/
+}
+.addNews{
+    margin: 10px auto 0 300px;
+    background-color: lime;
+}
+#output{
+    margin: 10px auto 100px 200px;
+    background-color: gold;
+}
+

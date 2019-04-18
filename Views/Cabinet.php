@@ -1,3 +1,4 @@
+<?php if (0 === 1) { ?>﻿
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,4 +35,22 @@
             <input type="submit" name="cabinet_logOut" value="Выход" id="output" form="allNewsUser"/>
         </form>
     </body>
-</html>  
+</html>
+<?php } else { ?>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+        </head>
+        <body>
+            <button type="button" name="cabinet_showNews"><?= $loginUser ?></button>
+            <div id = cabinet_allNews>
+                <?php
+                foreach ($news as $news_one) {
+                    
+                }
+                ?>
+            </div>
+        </body>
+    </html>

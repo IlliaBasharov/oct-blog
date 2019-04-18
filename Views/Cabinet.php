@@ -19,7 +19,7 @@
 		<?php
 		$db = new DataBase();
 		$user = $db->getUser($loginUser);
-		$news_array = $db->getNewsByLogin($loginUser);
+		$news_array = array_reverse($db->getNewsByLogin($loginUser));
 		foreach ($news_array as $news):
 		    $link = 'http://oct-blog/SingleNews.php?newsId=' . $news['id'];
 		    ?>

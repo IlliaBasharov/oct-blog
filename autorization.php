@@ -1,4 +1,5 @@
 <?php
+include_once 'includes'.DIRECTORY_SEPARATOR.'sessionStart.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 include_once 'views'.DIRECTORY_SEPARATOR.'Autorization.php';
 } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -7,7 +8,7 @@ include_once 'views'.DIRECTORY_SEPARATOR.'Autorization.php';
 
 
     include_once 'Application' . DIRECTORY_SEPARATOR . 'DataBase.php';
-    include_once 'config_example.php';
+
 
     $db = new DataBase();
     $user = $db->getUser($login);

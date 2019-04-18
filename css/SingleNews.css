@@ -1,0 +1,17 @@
+form{
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+form h2{
+    text-align: center;
+}
+body{
+    background-image: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
+}
+form input{
+   margin: 0 45%;
+}
+.center-img {
+  text-align: center;
+}

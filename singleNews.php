@@ -8,7 +8,7 @@ if (isset($_GET['newsId'])) {
         $news = $db->getNewsById($id);
         if ($_GET['newsId'] === $news['id']) {
             $view = '<form class="w3-container w3-pale-blue"" method="post" action="/index/" >.<h2>' . $news['name'] . 
-                    '</h2>'.'<p class="center-img"><img class="rightimg" src="' . $news['photo'] . '" /></p>'.
+                    '</h2>'.'<p class="center-img"><img  src="' . $news['photo'] . '" /></p>'.
                     '<p class="w3-text-black">' .
                     $news['text'] . '</p>' .
                     '<input type="submit" value="К новостям" class="w3-button w3-blue" onclick="document.getElementById("id01").style.display="block""/> </form>';           

@@ -20,7 +20,7 @@
             $user = $db->getUser($loginUser);
             $news_array = $db->getNewsByLogin($loginUser);
             foreach ($news_array as $news):
-                $link = 'http://oct-blog/SingleNews.php?newsId= '.$news[id];
+                $link = 'http://oct-blog/SingleNews.php?newsId='.$news[id];
                 ?>
                 <a href='<?= $link.$news->newsId; ?>'>
 

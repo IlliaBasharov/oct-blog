@@ -23,6 +23,6 @@
         </style>
     </head>
     <body>      
-            <?php include_once '../singleNews.php'; ?> 
+            <?php echo $view ?> 
     </body>
 </html>

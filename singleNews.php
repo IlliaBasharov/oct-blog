@@ -1,5 +1,5 @@
 <?php
-
+include_once 'includes'.DIRECTORY_SEPARATOR.'sessionStart.php';
 include_once 'includes'.DIRECTORY_SEPARATOR.'Autoload.php';
 if (!empty($_GET["newsId"])) {
     //добавлена след. строка

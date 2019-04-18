@@ -74,8 +74,9 @@ class newNews {
             if (empty($_SESSION['file_error_message']) && $this->validator($this->title, $this->text) ) {
                 $login = $_SESSION['loginUser'];
                 $db = new DataBase();
-                $user = $db->getUser($login);
-                $this->user_id = $user['user_id'];
+                $articles = $db->getUser($login);
+                var_dump($articles);
+                $this->user_id = $articles['id'];
                 $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, $this->user_id);
 
                 header('Location: http://oct-blog/Views/AllNews.php');

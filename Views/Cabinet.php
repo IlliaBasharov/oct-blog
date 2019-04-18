@@ -38,6 +38,8 @@
                 </a>
             </p>
         </div>
-        <input type="submit" name="cabinet_logOut" value="Выход" id="output"/>
+        <form method="POST" >
+            <input type="submit" name="cabinet_logOut" value="Выход" id="output"/>
+        </form>
     </body>
 </html>

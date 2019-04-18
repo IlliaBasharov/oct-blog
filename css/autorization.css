@@ -1,11 +1,10 @@
-form{
-    width: 300px;
-    margin: 10px auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #cccccc;
+#form{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px; 
 }
 
 form input{
-    margin: 5px;
+    margin:5px;
 }

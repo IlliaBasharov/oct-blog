@@ -6,7 +6,7 @@
         <title></title>
     </head>
     <body>
-	<form method="POST">
+	
 	    <button type="button" name="cabinet_showNews" id="log">
 		<?php echo $loginUser; ?>
 	    </button>
@@ -41,6 +41,7 @@
 		    </a>
 		</p>
 	    </div>
+	<form method="POST">
             <input type="submit" name="cabinet_logOut" value="Выход" id="output"/>
         </form>
     </body>

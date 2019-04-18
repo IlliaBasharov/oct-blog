@@ -6,7 +6,7 @@ body{
     background-color: aqua;
 }
 #cabinet_allNews{
-    margin: 20px auto 0 50px;
+    margin: 10px 10px auto;
 /*    visibility: hidden;*/
 }
 .addNews{
@@ -17,4 +17,15 @@ body{
     margin: 10px auto 100px 200px;
     background-color: gold;
 }
-
+.del{
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 20px;
+}
+#del{
+    height: 20px;
+    width: 20px;
+    margin-left: 200px;
+    padding: 0;
+}

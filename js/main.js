@@ -13,7 +13,7 @@ window.onload = function () {
         textBlocks[i].innerHTML = '';
         var  sliced = text.slice(0,101);
         if(sliced[100]!==' '){
-            for(var i=sliced.length; i>0;i--){
+            for(var j=sliced.length; j>0;j--){
                 if(sliced[i]== ' '){
                     var space = sliced[i];
                     break;

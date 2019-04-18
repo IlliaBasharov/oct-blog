@@ -20,7 +20,8 @@
                 <form name="news_id" method="POST">
                     <?php
                     $db = new DataBase();
-                    $news_array = $db->getNews();
+                    $user = $db->getUser($loginUser); //
+                    $news_array = $db->getNewsByLogin($loginUser);
                     $link = 'Views' . DIRECTORY_SEPARATOR . 'SingleNews.php';
                     foreach ($news_array as $news):
                         ?>
@@ -36,7 +37,9 @@
                     </a>
                 </p>
             </div>
-            <input type="submit" name="cabinet_logOut" value="Выход" id="output" form="allNewsUser"/>
+        </form>
+        <form method="POST">
+            <input type="submit" name="cabinet_logOut" formmethod="post" value="Выход" id="output"/>
         </form>
     </body>
 </html>

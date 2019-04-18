@@ -37,7 +37,9 @@
                     </a>
                 </p>
             </div>
-            <input type="submit" name="cabinet_logOut" formmethod="POST" value="Выход" id="output" form="allNewsUser"/>
+        </form>
+        <form method="POST">
+            <input type="submit" name="cabinet_logOut" formmethod="post" value="Выход" id="output"/>
         </form>
     </body>
 </html>

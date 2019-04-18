@@ -1,6 +1,7 @@
 <?php
 
-include_once '..' . DIRECTORY_SEPARATOR . 'config_example.php';
+include_once $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR. 'config_example.php';
+include_once 'User.php';
 
 class DataBase {
 
@@ -74,7 +75,7 @@ class DataBase {
             exit;
         }
         $massive = $result->fetch_assoc();
-        $user = new User($massive['id'], $massive['login'], $massive['pass'], $massive['email']);
+        $user = new User($massive['login'], $massive['pass'], $massive['email']);
         return $user;
     }
 
@@ -104,7 +105,6 @@ class DataBase {
             exit;
         }
         $news = $result->fetch_all(MYSQLI_ASSOC);
-        var_dump($news);
         return $news;
     }
     

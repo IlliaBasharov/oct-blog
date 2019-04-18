@@ -1,15 +1,13 @@
 form{
+    width: 300px;
+    margin: 10px auto 0 auto;
     display: flex;
     flex-direction: column;
+    background-color: #cccccc;
 }
-#main{
-    width: 10%;
-    margin-top: 100px;
-    margin-right: auto;
-    margin-left: auto;
-}
-input{
-    margin: 2px;
+
+form input{
+    margin: 5px;
 }
 body{
 background-image: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);

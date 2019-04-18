@@ -14,4 +14,5 @@ const AVAILABLE_TYPES = array(
 const MAX_UPLOAD_DOC_SIZE = 10*1024*1024;
 const UPLOAD_DOC_DIR = '..'.DIRECTORY_SEPARATOR.'images';
 
-const URL_SITE = 'http://oct-blog/autorization.php';
+$host = $_SERVER['HTTP_HOST'];
+$URL_SITE = 'http://'.$host;

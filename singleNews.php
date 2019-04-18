@@ -17,5 +17,4 @@ if (isset($_GET['newsId'])) {
         echo 'Извините, возникла проблема в работе сайта.';
     }    
 }
-echo '<input type="submit" action="\index.php"/>'; // строка дописана
 

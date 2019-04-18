@@ -1,6 +1,6 @@
 <?php
 
-include_once 'includes/Autoload.php';
+include_once 'includes'.DIRECTORY_SEPARATOR.'Autoload.php';
 if (!empty($_GET["newsId"])) {
     //добавлена след. строка
     $id = $_GET["newsId"];
@@ -22,5 +22,5 @@ if (!empty($_GET["newsId"])) {
             . 'Извините, возникла проблема в работе сайта.</br>' . '<p>' .
             '<input type="submit" value="К новостям" class="w3-button w3-blue" onclick="document.getElementById("id01").style.display="block""/> </form>';
 }
-include_once 'Views/SingleNews.php';
+include_once 'Views'.DIRECTORY_SEPARATOR.'SingleNews.php';
 

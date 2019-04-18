@@ -132,7 +132,7 @@ class DataBase {
             echo "Ошибка: " . $this->mysqli->error . "\n";
             exit;
         }
-        return $result;
+
     }
 
 }

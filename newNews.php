@@ -2,6 +2,7 @@
 
 include_once '..' . DIRECTORY_SEPARATOR . 'config.php';
 include_once 'application' . DIRECTORY_SEPARATOR . 'DataBase.php';
+include_once 'includes'.DIRECTORY_SEPARATOR.'sessionStart.php';
 
 class newNews {
 
@@ -83,9 +84,9 @@ class newNews {
                 $this->user_id = $id;
                 $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, $this->user_id);
 
-                header('Location: http://oct-blog/Views/AllNews.php');
-            } else {
                 header('Location: http://oct-blog/index.php');
+            } else {
+                header('Location: http://oct-blog/Views/newNews.php');
             }
         }
     }

@@ -1,4 +1,5 @@
 <?php
+include_once 'includes'.DIRECTORY_SEPARATOR.'sessionStart.php';
 spl_autoload_register(function ($class_name) {
     $class_file = 'application' . DIRECTORY_SEPARATOR . $class_name . '.php';
     if (file_exists($class_file)) {

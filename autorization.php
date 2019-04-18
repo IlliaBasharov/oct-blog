@@ -19,6 +19,9 @@ include_once 'views'.DIRECTORY_SEPARATOR.'Autorization.php';
         if (password_verify($pass, $user->pass)) {
             $_SESSION['loginUser'] = $login;
             header("Location: index.php");
+        } else {
+             echo 'Invalid Login or Password!';
+      include_once 'views'.DIRECTORY_SEPARATOR.'Autorization.php'; 
         }
     }
 }

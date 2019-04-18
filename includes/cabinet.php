@@ -6,6 +6,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 if ($method === 'POST') {
     $deleteNewsId  = POST["deleteNewsId"];
     if(!empty($deleteNewsId)){
+        $db = new DataBase();
         $db->deletNews($deleteNewsId);
     } else {
         $user=new User();

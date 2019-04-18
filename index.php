@@ -6,3 +6,4 @@ if(empty($loginUser)){
 } else {
     include_once 'includes'.DIRECTORY_SEPARATOR.'cabinet.php';
 }
+var_dump($_SERVER);

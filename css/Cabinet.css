@@ -29,3 +29,32 @@ body{
     margin-left: 200px;
     padding: 0;
 }
+p{
+    font-weight:bold;
+    margin-left: 90vw;
+}
+img{
+    width: 35px;
+    float:left;
+    margin-left: 86vw;
+    margin-top: -4vw;
+}
+h2{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+#title{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height:50px;
+}
+input[type='submit']{
+    margin-left: 40vw;
+    margin-top:-1.5vw;
+}
+#cabinet_allNews{
+    visibility: hidden;
+}

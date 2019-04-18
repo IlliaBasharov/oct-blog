@@ -7,14 +7,19 @@ if (isset($_GET['newsId'])) {
         $db = new DataBase();
         $news = $db->getNewsById($id);
         if ($_GET['newsId'] === $news['id']) {
-            $view = '<h2>' . $news['name'] . '</h2><p>' . $news['text'] . '</p>' .
-                    '<img src="' . $news['photo'] . '" />';  //'<img src="image.php?id=' . $news['photo'] . '" />';
+            $view = '<form method="post" action="/index/">.<h2>' . $news['name'] . '</h2><p>' . $news['text'] . '</p>' .
+                    '<img src="' . $news['photo'] . '" /></br>'.
+                    '<input type="submit" value="К новостям" /> </form>';
             echo $view;
         } else {
-            echo 'Такой новости не существует';
+            echo '<form method="post" action="/index/">'
+            . 'Такой новости не существует</br>'.
+            '<input type="submit" value="К новостям" /> </form>';
         }
     } else {
-        echo 'Извините, возникла проблема в работе сайта.';
+        echo '<form method="post" action="/index/">'
+        . 'Извините, возникла проблема в работе сайта.</br>'.
+        '<input type="submit" value="К новостям" /> </form>';
     }    
 }
 

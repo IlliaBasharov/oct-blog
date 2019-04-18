@@ -47,7 +47,7 @@ if (!empty($_POST['register'])) {
 
 if ($massages === true) {
     $database->setUser($user_data['login'], $user_data['password'], $user_data['email']);
-    header('Location:'.URL_SITE);
+    header('Location:'.$URL_SITE);
 }
 
 include_once 'Views'.DIRECTORY_SEPARATOR.'registration.php';

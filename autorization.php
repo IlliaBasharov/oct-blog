@@ -28,6 +28,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
 
 	$db = new DataBase();
 	if (!$user = $db->getUser($login)) {
+		header("Location: autorization.php");
 		echo 'Invalid Login!';
 	} else {
 		if (password_verify($pass, $user->pass)) {

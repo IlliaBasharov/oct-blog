@@ -74,13 +74,18 @@ class newNews {
             if (empty($_SESSION['file_error_message']) && $this->validator($this->title, $this->text) ) {
                 $login = $_SESSION['loginUser'];
                 $db = new DataBase();
-                $user = $db->getUser($login);
-                $this->user_id = $user['user_id'];
+                $ids = $db->getUserId($login);
+                foreach($ids as $value){
+                    $id = $value['id'];
+                    break;
+                }
+                $id = $id*1;
+                $this->user_id = $id;
                 $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, $this->user_id);
 
                 header('Location: http://oct-blog/Views/AllNews.php');
             } else {
-                header('Location: http://oct-blog/Views/NewNews.php');
+                header('Location: http://oct-blog/index.php');
             }
         }
     }

@@ -3,6 +3,7 @@
 $db = new DataBase();
 
 $method = $_SERVER['REQUEST_METHOD'];
+
 if ($method === 'POST') {
     $deleteNewsId = $_POST['deleteNewsId'];
     if (!empty($deleteNewsId)) {

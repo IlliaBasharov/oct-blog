@@ -14,13 +14,13 @@
 		<div id="index_allNewsDiv">
 			<?php
                         $db = new DataBase();
-                        $news_array = $db->getNews();
+                        $news_array = array_reverse($db->getNews());
                         //=====================старая версия
 			//$news_array=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-                        $link='Views'.DIRECTORY_SEPARATOR.'SingleNews.php';
+                        $link='singleNews.php?newsId=';
 			foreach ($news_array as $news):
 			?>
-                    <a href='<?=$link?>'><div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal w3-hover-light-grey" id="newsText"><h3><?=$news['name']?></h3><p><?=$news['text']?></p></div></a>
+                    <a href='<?=$link.$news['id']?>'><div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal w3-hover-light-grey" id="newsText"><h3><?=$news['name']?></h3><p><?=$news['text']?></p></div></a>
 			<?php endforeach; ?>
 		</div>
 	</body>

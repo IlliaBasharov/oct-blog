@@ -64,7 +64,7 @@ class newNews {
                         define('ROOT', dirname(__FILE__));
 //                        ROOT . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . $file_name;
                         $this->image_path = $file_name;
-                        var_dump($this->image_path);
+
                         $file_path = UPLOAD_DOC_DIR . DIRECTORY_SEPARATOR . $file_name;
                         if (!move_uploaded_file($documents['tmp_name'][$i], $file_path)) {
                             $message = 'перемещение загруженного файла не удалось!';

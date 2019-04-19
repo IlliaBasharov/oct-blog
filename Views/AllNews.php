@@ -2,11 +2,10 @@
 <html>
 	<head>
 		<title></title>
-                <link href="css/main.css" rel="stylesheet" type="text/css"/>
-                <script src="../js/main.js" type="text/javascript"></script>
+                <link href="css/main.css" rel="stylesheet" type="text/css"/>                
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="../css/Footer.css" rel="stylesheet" type="text/css"/>
+                <script src="../js/cabinet.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<form>
@@ -24,6 +23,5 @@
                     <a href='<?=$link.$news['id']?>'><div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal w3-hover-light-grey" id="newsText"><h3><?=$news['name']?></h3><p><?=$news['text']?></p></div></a>
 			<?php endforeach; ?>
 		</div>
-             <?php include_once 'Views'.DIRECTORY_SEPARATOR.'Footer.php'; ?> 
 	</body>
 </html>

@@ -26,7 +26,6 @@
 
             </form>
         </div>
-        <?php include_once 'Footer.php'; ?> 
     </body>
 </html>
 

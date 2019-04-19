@@ -37,11 +37,10 @@
                     <input class="w3-input w3-border w3-light-grey" type="email" name="email" required>
                 </p>
                 <p>
-                    <button type="submit" class="w3-btn w3-blue-grey" name="register" value="register">Регистрация</button>
+                    <button type="submit" class="w3-btn w3-blue-grey" name="register" method="POST" value="register">Регистрация</button>
                 </p>
             </form>
         </div>
-         <?php include_once 'Footer.php'; ?> 
     </body>
 </html>
 

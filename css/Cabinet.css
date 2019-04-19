@@ -6,8 +6,11 @@ body{
     background-image: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
 }
 header{
-    margin-top: 0;
     visibility: hidden;
+}
+.onright{
+    position: absolute;
+    right: 0;
 }
 #cabinet_allNews{
     width: 50%;

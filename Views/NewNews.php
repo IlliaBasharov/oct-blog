@@ -11,24 +11,41 @@ $newNews->fileValidator();
         <title>Add news</title>
         <meta charset="UTF-8">
         <link href="../css/smirnov.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>
         <?php if ($_SERVER['REQUEST_METHOD'] === 'GET'): ?>
-            <div id="main">
-                <form method="POST" enctype="multipart/form-data">
-                    <h2>Создать новость</h2>
-                    <input type="text" name="title" maxlength="255" placeholder="заголовок" required/>
-                    <input type="text" name="content" placeholder="текст" required/>
-                    <input type="date" name="date" placeholder="дата создания"/>
-                    <input type="file" multiple name="document[]"/>
-                    <input type="submit" value="Загрузить" name="upload"/>
-
+            
+        <div id="main" class="w3-card-4">
+            <div class="w3-container w3-teal">
+                <h2>Создать статью</h2>
+            </div>
+                <form method="POST" enctype="multipart/form-data" w3-container>
+                    <p>
+                    <label class="w3-text-teal"><b>Заголовок</b></label>
+                    <input class="w3-input w3-border w3-light-grey" type="text" name="title" maxlength="255" placeholder="заголовок" required/>
+                    </p>
+                    <p>
+                    <label class="w3-text-teal"><b>Текст</b></label>
+                    <input class="w3-input w3-border w3-light-grey" type="text" name="content" placeholder="текст" required/>
+                    </p>
+                    <p>
+                    <label class="w3-text-teal"><b>Дата создания</b></label>
+                    <input class="w3-input w3-border w3-light-grey" type="date" name="date" placeholder="дата создания"/>
+                    </p>
+                    <p>
+                    <input class="w3-input w3-border w3-light-grey" type="file" multiple name="document[]"/>
+                    </p>
+                    <p>
+                    <input class="w3-btn w3-blue-grey" type="submit" value="Загрузить" name="upload"/>
+                    </p>
                 </form>
+                </div>
                 <p><?php
             $newNews->fileValidator();
             echo $newNews->error_message
             ?></p>
-            </div>
+            
         <?php endif; ?>
     </body>
 </html>

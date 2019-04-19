@@ -1,51 +1,44 @@
-<?php
-spl_autoload_register(function ($class_name) {
-    $class_file = 'application' . DIRECTORY_SEPARATOR . $class_name . '.php';
-    if (file_exists($class_file)) {
-        include_once $class_file;
-        return TRUE;
-    }
-    return FALSE;
-});
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="css/registration.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/registration.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <?php if ($massages !== true) : ?>
+            <div id="error">
+                <?= $massages ?>
+            </div>
+        <?php endif; ?>
+        <div id="form" class="w3-card-4">
+            <div class="w3-container w3-teal">
+                <h2>Регистрация</h2>
+            </div>
+            <form action="registration.php" class="w3-container" method="POST" name="register">
+                <p>
+                    <label class="w3-text-teal"><b>Логин</b></label>
+                    <input class="w3-input w3-border w3-light-grey" type="text" name="login" required>
+                </p>
+                <p>
+                    <label class="w3-text-teal"><b>Пароль</b></label>
+                    <input class="w3-input w3-border w3-light-grey" type="password" name="password" required>
+                </p>
+                <p>
+                    <label class="w3-text-teal"><b>Подтверждение пароля</b></label>
+                    <input class="w3-input w3-border w3-light-grey" type="password" name="confirm_password" required>
+                </p>
+                <p>
+                    <label class="w3-text-teal"><b>Email</b></label>
+                    <input class="w3-input w3-border w3-light-grey" type="email" name="email" required>
+                </p>
+                <p>
+                    <button type="submit" class="w3-btn w3-blue-grey" name="register" value="register">Регистрация</button>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
 
-function getUserData() {
-    $user_data = [];
-    $user_data['login'] = filter_input(INPUT_POST, 'login');
-    $user_data['password'] = filter_input(INPUT_POST, 'password');
-    $user_data['confirm_password'] = filter_input(INPUT_POST, 'confirm_password');
-    $user_data['email'] = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    return $user_data;
-}
-
-function validateUserData($user_data) {
-    if (empty($user_data['login'])) {
-        $massages = 'логин не введен';
-    } elseif (empty($user_data['password'])) {
-        $massages = 'пароль не введен';
-    } elseif (empty($user_data['confirm_password'])) {
-        $massages = 'пароль не введен';
-    } elseif ($user_data['password'] !== $user_data['confirm_password']) {
-        $massages = 'пароли не совпадают';
-    } elseif (empty($user_data['email'])) {
-        $massages = 'почта введена не верно';
-    } else {
-        return true;
-    }
-    return $massages;
-}
-
-$database = new DataBase ();
-
-if (!empty($_POST['register'])) {
-    $user_data = getUserData();
-    $massages = validateUserData($user_data);
-    $user = $database->getUser($user_data['login']);
-    if(!empty($user->login)){
-        $massages = 'такой юзер уже зарегистрирован';
-    }
-}
-
-if ($massages === true) {
-    $database->setUser($user_data['login'], $user_data['password'], $user_data['email']);
-    header('Location: http://oct-blog/autorization.php');
-}

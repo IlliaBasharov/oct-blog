@@ -8,18 +8,13 @@
         <title></title>
     </head>
     <body>
+        <header>
 	<form method="POST">
-	    
-		<p><?php echo $loginUser; ?></p>
+		<p id="logoTop"><?php echo $loginUser; ?> <input class="w3-button w3-teal" type="submit" name="cabinet_logOut" value="Выход" id="output"/> </p>
                 <hr>
-	    
-	    <div id="cabinet_allNews">
-		<img alt="user" src="http://s1.iconbird.com/ico/2013/9/450/w256h2561380453931User256x25632.png"/>
-                <p>
-		    <a href="Views/newNews.php">
-			<input type="button" name="cabinet_newNews" value="Добавить новость" class="addNews"/>
-		    </a>  
-		</p>
+        </form>
+        </header>
+                <div id="cabinet_allNews" class="w3-container">
 		<?php
 		$db = new DataBase();
 		$user = $db->getUser($loginUser);
@@ -27,9 +22,11 @@
 		foreach ($news_array as $news):
 		    $link = 'http://oct-blog/SingleNews.php?newsId=' . $news['id'];
 		    ?>
-               
-                <h2>Мои Статьи</h2>
+                <h2 id="myArt">Мои Статьи</h2>
                 <form method="POST" class="w3-container">
+                    <a href="Views/newNews.php">
+			<input class="w3-button w3-teal addNews" type="button" name="cabinet_newNews" value="+" id="addNews" />
+		    </a>  
                  <div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal" id="title">
                     <a href='<?= $link . $news->newsId; ?>'
                         <h3><?= $news['name'] ?></h3>
@@ -39,17 +36,11 @@
 		    <input type="hidden" name="deleteNewsId" value="<?= $news['id'] ?>"/>
 		    <!--<input class="w3-button w3-teal" type="submit"  value='удалить'/>-->
 			</form>
-                    
-
-		    
+                
 		<?php endforeach; ?>
-		<p>
-		    <a href="Views/newNews.php">
-			<input type="button" name="cabinet_newNews" value="Добавить новость" class="addNews"/>
-		    </a>
-		</p>
+                        </form>
+
 	    </div>
-            <input type="submit" name="cabinet_logOut" value="Выход" id="output"/>
-        </form>
+            
     </body>
 </html>

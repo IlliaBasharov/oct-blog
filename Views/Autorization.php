@@ -1,6 +1,5 @@
 <?php
 include_once 'config.php';
-var_dump($URL_SITE);
 $url = $URL_SITE."/registration.php";
 ?>
 <!DOCTYPE html>

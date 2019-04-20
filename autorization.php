@@ -18,6 +18,7 @@ include_once 'views'.DIRECTORY_SEPARATOR.'Autorization.php';
       include_once 'views'.DIRECTORY_SEPARATOR.'Autorization.php';
     } else {
         if (password_verify($pass, $user->pass)) {
+	    
             $_SESSION['loginUser'] = $login;
             header("Location:".$URL_SITE.DIRECTORY_SEPARATOR."index.php");
         } else {

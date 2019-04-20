@@ -13,7 +13,6 @@
 		</form>
 		<div id="index_allNewsDiv">
 			<?php
-			var_dump($_SERVER);
                         $db = new DataBase();
                         $news_array = array_reverse($db->getNews());
                         //=====================старая версия

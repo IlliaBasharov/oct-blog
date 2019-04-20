@@ -11,6 +11,7 @@ $newNews->fileValidator();
         <title>Add news</title>
         <meta charset="UTF-8">
         <link href="../css/smirnov.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="../css/Footer.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -28,11 +29,7 @@ $newNews->fileValidator();
                     </p>
                     <p>
                     <label class="w3-text-teal"><b>Текст</b></label>
-                    <input class="w3-input w3-border w3-light-grey" type="text" name="content" placeholder="текст" required/>
-                    </p>
-                    <p>
-                    <label class="w3-text-teal"><b>Дата создания</b></label>
-                    <input class="w3-input w3-border w3-light-grey" type="date" name="date" placeholder="дата создания"/>
+                    <textarea name="content" placeholder="text" required class="w3-input w3-border w3-light-grey"></textarea>
                     </p>
                     <p>
                     <input class="w3-input w3-border w3-light-grey" type="file" multiple name="document[]"/>
@@ -40,12 +37,14 @@ $newNews->fileValidator();
                     <p>
                     <input class="w3-btn w3-blue-grey" type="submit" value="Загрузить" name="upload"/>
                     </p>
-                </form>
-                </div>
-                <p><?php
+		                      <p id="msg"><?php
             $newNews->fileValidator();
             echo $newNews->error_message
             ?></p>
+                </form>
+
+                </div>
+
             
         <?php endif; ?>
     </body>

@@ -1,3 +1,8 @@
+<?php
+include_once 'config.php';
+var_dump($URL_SITE);
+$url = $URL_SITE."/registration.php";
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +27,7 @@
                 <input id="passwordField" type="password" name="password" required class="w3-input w3-border w3-light-grey">
 
                 <input type="submit" value="Войти" class="w3-btn w3-blue-grey">
-                <input type="button" value="Зарегистрироваться" onclick="location.href = ' http://oct-blog/registration.php'" class="w3-btn w3-blue-grey">
+                <input type="button" value="Зарегистрироваться" onclick="location.href = '<?= $url ?>'" class="w3-btn w3-blue-grey">
 
             </form>
         </div>

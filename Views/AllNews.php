@@ -9,10 +9,11 @@
 	</head>
 	<body>
 		<form>
-                    <input type="submit" formaction='http://oct-blog/autorization.php' value="Войти" class="w3-button w3-teal" id="enter" />
+                    <input type="submit" formaction=<?=$_SERVER['HTTP_HOST'].DIRECTORY_SEPARATOR.'autorization.php'?> value="Войти" class="w3-button w3-teal" id="enter" />
 		</form>
 		<div id="index_allNewsDiv">
 			<?php
+			var_dump($_SERVER);
                         $db = new DataBase();
                         $news_array = array_reverse($db->getNews());
                         //=====================старая версия

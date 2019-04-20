@@ -27,11 +27,7 @@ $newNews->fileValidator();
                     </p>
                     <p>
                     <label class="w3-text-teal"><b>Текст</b></label>
-                    <input class="w3-input w3-border w3-light-grey" type="text" name="content" placeholder="текст" required/>
-                    </p>
-                    <p>
-                    <label class="w3-text-teal"><b>Дата создания</b></label>
-                    <input class="w3-input w3-border w3-light-grey" type="date" name="date" placeholder="дата создания"/>
+                    <textarea name="content" placeholder="text" required class="w3-input w3-border w3-light-grey"></textarea>
                     </p>
                     <p>
                     <input class="w3-input w3-border w3-light-grey" type="file" multiple name="document[]"/>

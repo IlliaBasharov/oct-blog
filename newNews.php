@@ -17,9 +17,12 @@ class newNews {
     public function __construct() {
         $this->title = filter_input(INPUT_POST, 'title');
         $this->text = filter_input(INPUT_POST, 'content');
+	var_dump($this->text);
         $this->date_time = filter_input(INPUT_POST, 'date');
+	$time = date("Y-m-d");
         $today = date('H:m:s');
-        $this->date_time = $this->date_time . ' ' . $today;
+	$res_date = $time.' '.$today;
+        $this->date_time = $res_date;
         $this->date_change = $this->date_time;
     }
 

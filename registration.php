@@ -43,11 +43,13 @@ if (!empty($_POST['register'])) {
     $user = $database->getUser($user_data['login']);
     if(!empty($user->login)){
         $massages = 'такой юзер уже зарегистрирован';
+    }elseif ($database->chekEmailExists($user_data['email'])) {
+	$massages = 'пользователь с таким емайлом уже существует';
     }
 }
 
 if ($massages === true) {
-    $database->setUser($user_data['login'], $user_data['password'], $user_data['email']);
+    $database->setUser($user_data['login'], password_hash($user_data['password'],PASSWORD_DEFAULT ), $user_data['email']);
     header('Location: '.$URL_SITE.'autorization.php');
 }
 

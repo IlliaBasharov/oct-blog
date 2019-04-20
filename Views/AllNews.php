@@ -1,3 +1,6 @@
+<?php
+include_once 'config.php';
+?>
 <!doctype>
 <html>
 	<head>
@@ -9,7 +12,7 @@
 	</head>
 	<body>
 		<form>
-                    <input type="submit" formaction='http://oct-blog/autorization.php' value="Войти" class="w3-button w3-teal" id="enter" />
+                    <input type="submit" formaction=<?=$URL_SITE.DIRECTORY_SEPARATOR.'autorization.php'?> value="Войти" class="w3-button w3-teal" id="enter" />
 		</form>
 		<div id="index_allNewsDiv">
 			<?php

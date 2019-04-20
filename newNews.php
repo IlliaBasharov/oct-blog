@@ -1,6 +1,6 @@
 <?php
 
-include_once '..' . DIRECTORY_SEPARATOR . 'config.php';
+include_once 'config.php';
 include_once 'application' . DIRECTORY_SEPARATOR . 'DataBase.php';
 include_once 'includes'.DIRECTORY_SEPARATOR.'sessionStart.php';
 
@@ -17,7 +17,7 @@ class newNews {
     public function __construct() {
         $this->title = filter_input(INPUT_POST, 'title');
         $this->text = filter_input(INPUT_POST, 'content');
-	var_dump($this->text);
+
         $this->date_time = filter_input(INPUT_POST, 'date');
 	$time = date("Y-m-d");
         $today = date('H:m:s');
@@ -88,10 +88,11 @@ class newNews {
                 $id = $id*1;
                 $this->user_id = $id;
                 $db->setNews($this->title, $this->text, $this->image_path, $this->date_time, $this->date_change, $this->user_id);
+		$url = $_SERVER['HTTP_ORIGIN'];
 
-                header('Location: http://oct-blog/index.php');
+                header("Location: ".$url."/index.php");
             } else {
-                header('Location: http://oct-blog/Views/newNews.php');
+                header("Location: ".$URL_SITE."NewNews.php");
             }
         }
     }

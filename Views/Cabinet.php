@@ -11,7 +11,7 @@
     <body>
         <header id="header" class="w3-light-grey">
             <form method="POST">
-                <label class="onright"><?php echo $loginUser; ?> <input class="w3-button w3-teal" type="submit" name="cabinet_logOut" value="Выход" id="output"/></label>
+                <div class="onright logo"><?php echo $loginUser; ?> <input class="w3-button onright line w3-teal" type="submit" name="cabinet_logOut" value="Выход" id="output"/></div>
             </form>
         </header>
         <div id="cabinet_allNews" class="w3-container">
@@ -32,7 +32,7 @@
                     ?>
 
                     <div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal" id="title">
-                        <a href='<?= $link . $news->newsId; ?>'
+                        <a href='<?= $link . $news->newsId; ?>'>
                            <h3><?= $news['name'] ?></h3>
                             <input class="w3-button w3-teal" type="submit"  value='x' id="delete"/>
                         </a>
@@ -52,12 +52,12 @@
                 </a>  
             </form>
         </div>
-        <div id="fisrtPage" class="w3-panel w3-pale-blue w3-leftbar w3-border-teal" >
+<!--        <div id="fisrtPage" class="w3-panel w3-pale-blue w3-leftbar w3-border-teal" >
             <form method="POST" class="w3-container w3-panel w3-pale-blue w3-leftbar w3-border-teal" id="formFirst">
-                <h2 id="logoFirst">Привет, <?php echo $loginUser; ?>! </h2>
+                <h2 id="logoFirst">Привет, <?php //echo $loginUser; ?>! </h2>
                 <input class="w3-button w3-teal" type="submit" name="cabinet_logOut" value="Выход" id="outputFirst"/>
             </form> 
-        </div>
+        </div>-->
 
     </body>
 </html>

@@ -1,14 +1,14 @@
 window.onload = function () {
     // отображение новостей
-    var cabinet_showNews = document.getElementById('logoFirst');
-    var header = document.getElementById('header');
-    var cabinet_AllNewsDiv = document.getElementById("cabinet_allNews");
-    var fisrtPage = document.getElementById("fisrtPage");
-    cabinet_showNews.onclick = function () {
-        cabinet_AllNewsDiv.style.visibility = 'visible';
-        fisrtPage.style.visibility = 'hidden';
-        header.style.visibility = 'visible';
-    };
+//    var cabinet_showNews = document.getElementById('logo');
+//    var header = document.getElementById('header');
+//    var cabinet_AllNewsDiv = document.getElementById("cabinet_allNews");
+//    var fisrtPage = document.getElementById("fisrtPage");
+//    cabinet_showNews.onclick = function () {
+//        cabinet_AllNewsDiv.style.visibility = 'visible';
+//        //fisrtPage.style.visibility = 'hidden';
+//        //header.style.visibility = 'visible';
+//    };
     
     // обрезка текста
     var textBlocks = document.querySelectorAll('p');

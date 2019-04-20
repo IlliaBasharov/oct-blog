@@ -6,17 +6,19 @@ body{
     background-image: url(https://html5book.ru/wp-content/uploads/2015/10/background54.png);
 }
 header{
-    visibility: hidden;
+/*    visibility: hidden;*/
 }
 .onright{
     position: absolute;
     right: 0;
 }
+.line{
+    display: inline;
+}
 #cabinet_allNews{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    visibility: hidden;
 }
 #logoTop{
     font-weight:bold;

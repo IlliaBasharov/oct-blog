@@ -11,7 +11,7 @@
     <body>
         <header id="header" class="w3-light-grey">
             <form method="POST">
-                <div class="onright logo"><?php echo $loginUser; ?> <input class="w3-button onright line w3-teal" type="submit" name="cabinet_logOut" value="Выход" id="output"/></div>
+                <div class="onright logo"><pre><?php echo $loginUser; ?><pre> <input class="w3-button onright line w3-teal" type="submit" name="cabinet_logOut" value="Выход" id="output"/></div>
             </form>
         </header>
         <div id="cabinet_allNews" class="w3-container">

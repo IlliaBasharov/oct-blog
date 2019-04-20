@@ -13,13 +13,13 @@ if ($method === 'POST') {
     if (!empty($deleteNewsId)) {
         
         $db->deletNews($deleteNewsId);
-	header('Location: http://oct-blog/index.php');
+	header('Location: '.'$URL_SITE'.'/index.php');
     } 
 	
     if(!empty($_POST['cabinet_logOut'])){
         $user = new User();
         $user->logout();
-        header('Location: http://oct-blog/index.php');
+        header('Location: '.'$URL_SITE'.'/index.php');
     }
 } else if ($method === 'GET') {
     $news = $db->getNewsByLogin($loginUser);

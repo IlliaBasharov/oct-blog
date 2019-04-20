@@ -28,7 +28,7 @@
                 $user = $db->getUser($loginUser);
                 $news_array = $db->getNewsByLogin($loginUser);
                 foreach ($news_array as $news):
-                    $link = 'http://oct-blog/SingleNews.php?newsId=' . $news['id'];
+                    $link = $URL_SITE.'/SingleNews.php?newsId=' . $news['id'];
                     ?>
 
                     <div class="w3-panel w3-pale-blue w3-leftbar w3-border-teal" id="title">
